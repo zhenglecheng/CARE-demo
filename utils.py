@@ -13,7 +13,15 @@ def load_dataset(args):
     config['beta'] = 0
     config['norm'] = True
     config['clusters'] = args.clusters
-    if args.dataset in ['Amazon', 'YelpChi']:
+    if args.dataset == 'Amazon':
+        adj1, adj2, features, ano_label = load_mat(args.dataset)
+        features, _ = preprocess_features(features)
+        raw_features = features
+        config['cutting'] = 25
+        config['lamb'] = 1
+        config['alpha'] = 0.8
+        config['norm'] = False
+    elif args.dataset == 'YelpChi':
         adj1, adj2, features, ano_label = load_mat(args.dataset)
         features, _ = preprocess_features(features)
         raw_features = features
@@ -24,7 +32,7 @@ def load_dataset(args):
     elif args.dataset == 'dblp':
         adj1, adj2, features, ano_label = load_dblp_graph()
         raw_features = features
-        config['cutting'] = 15
+        config['cutting'] = 20
         config['lamb'] = 0.01
         config['alpha'] = 1
     elif args.dataset == 'imdb':
