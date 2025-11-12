@@ -13,7 +13,7 @@ To mitigate potential bias from these pseudo-labels, CARE introduces a similarit
     <img src="Fig/overview.png" alt="CARE Overview" width="50%"/>
     <p> CARE Overview</p>
 </div>
----
+
 
 ## ⚙️ Requirements
 
