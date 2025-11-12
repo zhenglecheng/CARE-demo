@@ -1,4 +1,4 @@
-# 🌐 CARE: Cluster-Aware Graph Anomaly Detection (Demo)
+# 🌐 CARE: Cluster-Aware Graph Anomaly Detection
 
 > Official demo code for the paper **"Cluster-Aware Graph Anomaly Detection"**  
 > This repository provides the implementation and example experiments for reproducing results on benchmark datasets such as **Amazon**, **BlogCatalog**, **IMDB**, and **DBLP**.
