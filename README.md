@@ -9,9 +9,10 @@
 
 **CARE** (Cluster-Aware Graph Anomaly Detection) is designed to detect anomalous nodes in graphs by leveraging both **structural** and **cluster-level semantic information**. The method jointly models **local neighborhood consistency** and **global cluster awareness** to effectively identify anomalies across diverse graph datasets by augmenting the graph adjacency matrix with pseudo-labels derived from soft cluster memberships. 
 To mitigate potential bias from these pseudo-labels, CARE introduces a similarity-guided loss, theoretically shown to be a variant of contrastive learning loss connected to spectral clustering.
-
-<img src="Fig/overview.png" alt="CARE Overview" width="50%"/>
-
+<div align="center">
+    <img src="Fig/overview.png" alt="CARE Overview" width="50%"/>
+    <p> CARE Overview</p>
+</div>
 ---
 
 ## ⚙️ Requirements
