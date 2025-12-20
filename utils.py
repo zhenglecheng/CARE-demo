@@ -33,7 +33,7 @@ def load_dataset(args):
         adj1, adj2, features, ano_label = load_dblp_graph()
         raw_features = features
         config['cutting'] = 20
-        config['lamb'] = 0.01
+        config['lamb'] = 0.005
         config['alpha'] = 1
     elif args.dataset == 'imdb':
         adj1, adj2, features, ano_label = load_imdb_graph()
