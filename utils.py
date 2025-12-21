@@ -32,9 +32,10 @@ def load_dataset(args):
     elif args.dataset == 'dblp':
         adj1, adj2, features, ano_label = load_dblp_graph()
         raw_features = features
-        config['cutting'] = 20
+        config['cutting'] = 10
         config['lamb'] = 0.004
         config['alpha'] = 1
+        config['norm'] = False
     elif args.dataset == 'imdb':
         adj1, adj2, features, ano_label = load_imdb_graph()
         raw_features = features
