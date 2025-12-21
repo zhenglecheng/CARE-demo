@@ -14,7 +14,7 @@ def main(args):
     # Initialize model and optimizer
     optimiser_list = []
     model_list = []
-    for i in range(args.cutting):
+    for i in range(config['cutting']):
         model = Model(config['ft_size'], args.embedding_dim, 'prelu', args.readout, config)
         optimiser = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
         if torch.cuda.is_available():
@@ -88,7 +88,7 @@ def main(args):
         message_list = torch.mean(torch.cat(message_list), 0)
         message_mean_list.append(torch.unsqueeze(message_list, 0))
         message_mean_cut = torch.mean(torch.cat(message_mean_list), 0)
-        message_mean = np.array(message_mean_cut.cpu().detach())
+        message_mean = message_mean_cut.cpu().detach().numpy()
         score = 1 - normalize_score(message_mean)
         model_list[index-1].evaluation(score, ano_label)
     end = time.time()

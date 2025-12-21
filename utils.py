@@ -25,7 +25,7 @@ def load_dataset(args):
         adj1, adj2, features, ano_label = load_mat(args.dataset)
         features, _ = preprocess_features(features)
         raw_features = features
-        config['cutting'] = 3
+        config['cutting'] = 1
         config['lamb'] = 1
         config['alpha'] = 0.8
         config['norm'] = False
@@ -33,7 +33,7 @@ def load_dataset(args):
         adj1, adj2, features, ano_label = load_dblp_graph()
         raw_features = features
         config['cutting'] = 20
-        config['lamb'] = 0.01
+        config['lamb'] = 0.004
         config['alpha'] = 1
     elif args.dataset == 'imdb':
         adj1, adj2, features, ano_label = load_imdb_graph()
@@ -44,9 +44,10 @@ def load_dataset(args):
     elif args.dataset == 'cert':
         adj1, adj2, features, ano_label = load_cert_graph()
         raw_features = features
-        config['cutting'] = 7
-        config['lamb'] = 0.1
-        config['alpha'] = 0.8
+        config['cutting'] = 20
+        config['lamb'] = 3
+        config['alpha'] = 1
+        config['beta'] = 2
     else:
         adj1, adj2, features, ano_label = load_mat(args.dataset)
         raw_features = features.todense()
